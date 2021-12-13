@@ -1,0 +1,68 @@
+{
+  "name": "AzureCli",
+  "type": "executer",
+  "main": "app.js",
+  "execProgram": "node",
+  "exposeRoute": false,
+  "imgUrl": "logo.png",
+  "version": "1.1.0",
+  "methods": [
+    {
+      "name": "AzureLogin",
+      "viewName": "Azure Login on Linux",
+      "params": [
+        {
+          "name": "UserId",
+          "viewName": "User Id",
+          "type": "string"
+        },
+        {
+          "name": "Password",
+          "viewName": "Password",
+          "type": "vault"
+        }
+      ]
+    },
+    {
+      "name": "_execute_easy",
+      "viewName": "Exicute Cli Command",
+      "params": [
+        {
+          "name": "command",
+          "viewName": "Command",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "create_service_principal",
+      "viewName": "Create Service Principal",
+      "params": [
+        {
+          "name": "serviceprincipalname",
+          "viewName": "service principal name",
+          "type": "string"
+        },
+        {
+          "name": "role",
+          "viewName": "Role",
+          "type": "option",
+          "option" : [
+            {
+              "id" : "Reader",
+              "name" : "Reader"
+            },
+            {
+              "id" : "Contributor",
+              "name" : "Contributor"
+            },
+            {
+              "id" : "owner",
+              "name" : "owner"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
